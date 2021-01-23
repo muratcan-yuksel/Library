@@ -28,14 +28,25 @@ document.getElementById("author").value=" ";
 console.log(myLibrary);
 
   }
-  
+      //get the table 
+      let table= document.getElementById("#tableList");  
+
   function listBooks(){
+
+
     for (let i =1; i<myLibrary.length; i++) 
     {
        console.log(`row ${i}`);
        for (const j in myLibrary[i]) 
          {
-          console.log(` ${myLibrary[i][j]}`);
-         }
+          //console.log(` ${myLibrary[i][j]}`);
+            let x = myLibrary[i][j];
+            console.log(x);
+            
+    
+           
+        }
     }
   }
+
+  

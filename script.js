@@ -1,4 +1,4 @@
-//let myLibrary= [{bookName:"der steppenwolf", author: "hermann hesse"}, {bookName: "underground", author:"dostoyevski"}];
+let myLibrary= [{bookName:"der steppenwolf", author: "hermann hesse"}, {bookName: "underground", author:"dostoyevski"}];
 
 function Book(bookName, author) {
     // the constructor...
@@ -27,7 +27,6 @@ document.getElementById("author").value=" ";
 
 
   function listBooks(){
-    let myLibrary= [{bookName:"der steppenwolf", author: "hermann hesse"}, {bookName: "underground", author:"dostoyevski"}];
 
 
     for (let i =0; i<myLibrary.length; i++) 

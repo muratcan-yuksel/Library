@@ -30,7 +30,7 @@ console.log(myLibrary);
   }
   
   function listBooks(){
-    for (const i in myLibrary) 
+    for (let i =1; i<myLibrary.length; i++) 
     {
        console.log(`row ${i}`);
        for (const j in myLibrary[i]) 

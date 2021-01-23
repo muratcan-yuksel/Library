@@ -29,24 +29,33 @@ console.log(myLibrary);
 
   }
       //get the table 
-      let table= document.getElementById("#tableList");  
-
+      let table= document.getElementById("tableList");  
+let texto= document.create
   function listBooks(){
 
 
     for (let i =1; i<myLibrary.length; i++) 
     {
-       console.log(`row ${i}`);
+      // console.log(`row ${i}`);
        for (const j in myLibrary[i]) 
          {
           //console.log(` ${myLibrary[i][j]}`);
             let x = myLibrary[i][j];
             console.log(x);
-            
-    
+          
            
         }
     }
+    
   }
 
-  
+  function myFunction() {
+    var table = document.createElement("table");
+    document.body.appendChild(table);
+    // var table = document.getElementById("myTable");
+     var row = table.insertRow(0);
+     var cell1 = row.insertCell(0);
+     var cell2 = row.insertCell(1);
+     cell1.innerHTML = "NEW CELL1";
+     cell2.innerHTML = "NEW CELL2";
+   }

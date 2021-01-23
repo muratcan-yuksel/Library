@@ -30,5 +30,12 @@ console.log(myLibrary);
   }
   
   function listBooks(){
-      
+    for (const i in myLibrary) 
+    {
+       console.log(`row ${i}`);
+       for (const j in myLibrary[i]) 
+         {
+          console.log(` ${myLibrary[i][j]}`);
+         }
+    }
   }

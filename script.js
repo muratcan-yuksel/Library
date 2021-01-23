@@ -1,4 +1,4 @@
-let myLibrary= [];
+let myLibrary= [{bookName: "notes from the underground", author:"dostoevsky"}, {bookName:"der steppenwolf", author:"hermann hesse"}];
 
 function Book(bookName, author) {
     // the constructor...
@@ -10,7 +10,6 @@ function Book(bookName, author) {
     // get the user input 
 let getBooks= document.getElementById("bookName").value;
 let getAuthor= document.getElementById("author").value;
-console.log(getBooks,getAuthor);
 //create object(s) from Book prototype
 let bookInput= Object.create(Book);
 //the user input will be object's values
@@ -20,9 +19,13 @@ bookInput.author= getAuthor;
 console.log(bookInput.bookName);
 console.log(bookInput.author);
 console.log(bookInput);
+//push the objects into the array
+myLibrary.push(bookInput);
 //empty the user input field
 document.getElementById("bookName").value=" ";
 document.getElementById("author").value=" ";
-
+//check if the library array is sound= Yes, it is.
+console.log(myLibrary);
 
   }
+  

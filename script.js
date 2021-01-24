@@ -24,8 +24,13 @@ document.getElementById("bookName").value=" ";
 document.getElementById("author").value=" ";
   }
    
-let para = document.getElementById("#para");
+let para = document.getElementById("para");
 para.style.color= "red";
+
+function myFunction1() {
+    var x = document.getElementById("demo");
+    x.style.color = "red";
+  }
 
 //loop through the array
 function loopArr(){

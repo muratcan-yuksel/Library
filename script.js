@@ -20,6 +20,14 @@ myLibrary.push(bookInput);
 
 console.log(myLibrary);
 
+
+//empty the user input field
+document.getElementById("bookName").value=" ";
+document.getElementById("author").value=" ";
+  }
+
+ 
+/*
 //loop through the array
 function loopArr(){
   myLibrary.forEach((element,index)=>{
@@ -41,20 +49,12 @@ function loopArr(){
      
   });
   }
-  loopArr();
 
-//empty the user input field
-document.getElementById("bookName").value=" ";
-document.getElementById("author").value=" ";
-  }
-
- 
+//call the table function
+loopArr();*/
 
 
 
-
-
-/*
   function listBooks(){
 
 
@@ -73,7 +73,7 @@ document.getElementById("author").value=" ";
     }
     
   }
-*/
+
   function myFunction() {
     var table = document.createElement("table");
     document.body.appendChild(table);

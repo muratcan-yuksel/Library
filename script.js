@@ -17,6 +17,8 @@ bookInput.bookName= getBooks;
 bookInput.author= getAuthor;
 //push the objects into the array
 myLibrary.push(bookInput);
+
+console.log(myLibrary);
 //empty the user input field
 document.getElementById("bookName").value=" ";
 document.getElementById("author").value=" ";
@@ -24,8 +26,18 @@ document.getElementById("author").value=" ";
    
   
 
+//loop through the array
+function loopArr(){
+myLibrary.forEach((element,index)=>{
+    console.log(element.bookName); // 100, 200, 300
+    console.log(element.author);
+    console.log(index); // 0, 1, 2
+   
+});
+}
 
 
+/*
   function listBooks(){
 
 
@@ -44,7 +56,7 @@ document.getElementById("author").value=" ";
     }
     
   }
-
+*/
   function myFunction() {
     var table = document.createElement("table");
     document.body.appendChild(table);

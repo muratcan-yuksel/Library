@@ -24,7 +24,8 @@ document.getElementById("bookName").value=" ";
 document.getElementById("author").value=" ";
   }
    
-  
+let para = document.getElementById("#para");
+para.style.color= "red";
 
 //loop through the array
 function loopArr(){

@@ -32,6 +32,8 @@ myLibrary.forEach((element,index)=>{
     console.log(element.bookName); // 100, 200, 300
     console.log(element.author);
     console.log(index); // 0, 1, 2
+    let para = document.getElementById("para");
+    para.textContent="change";
    
    
 });

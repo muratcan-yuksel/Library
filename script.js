@@ -33,8 +33,15 @@ myLibrary.forEach((element,index)=>{
     console.log(element.author);
     console.log(index); // 0, 1, 2
     let para = document.getElementById("para");
-    para.textContent="change";
-   
+    para.textContent=element.bookName + " "+ element.author;
+    var table = document.createElement("table");
+    document.body.appendChild(table);
+    // var table = document.getElementById("myTable");
+     var row = table.insertRow(0);
+     var cell1 = row.insertCell(0);
+     var cell2 = row.insertCell(1);
+     cell1.textContent = element.bookName + " "+ element.author;
+     cell2.innerHTML = element.bookName + " "+ element.author;
    
 });
 }
@@ -50,7 +57,7 @@ myLibrary.forEach((element,index)=>{
       // console.log(`row ${i}`);
        for (let keys in myLibrary[i]) 
          {
-          //console.log(` ${myLibrary[i][j]}`);
+          //console.log(` ${myLibrary[i][keys]}`);
             let x = myLibrary[i][keys];
             console.log(x);
             //x is string

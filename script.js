@@ -23,14 +23,8 @@ console.log(myLibrary);
 document.getElementById("bookName").value=" ";
 document.getElementById("author").value=" ";
   }
-   
-let para = document.getElementById("para");
-para.style.color= "red";
 
-function myFunction1() {
-    var x = document.getElementById("demo");
-    x.style.color = "red";
-  }
+ 
 
 //loop through the array
 function loopArr(){
@@ -39,8 +33,10 @@ myLibrary.forEach((element,index)=>{
     console.log(element.author);
     console.log(index); // 0, 1, 2
    
+   
 });
 }
+
 
 
 /*

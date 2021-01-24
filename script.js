@@ -19,6 +19,30 @@ bookInput.author= getAuthor;
 myLibrary.push(bookInput);
 
 console.log(myLibrary);
+
+//loop through the array
+function loopArr(){
+  myLibrary.forEach((element,index)=>{
+      console.log(element.bookName); // 100, 200, 300
+      console.log(element.author);
+      console.log(index); // 0, 1, 2
+      // write the new book on paragraph
+      let para = document.getElementById("para");
+      para.textContent=element.bookName + " "+ element.author;
+      //create table
+      var table = document.createElement("table");
+      document.body.appendChild(table);
+      // var table = document.getElementById("myTable");
+       var row = table.insertRow(0);
+       var cell1 = row.insertCell(0);
+       var cell2 = row.insertCell(1);
+       cell1.textContent = element.bookName;
+       cell2.innerHTML = element.author;
+     
+  });
+  }
+  loopArr();
+
 //empty the user input field
 document.getElementById("bookName").value=" ";
 document.getElementById("author").value=" ";
@@ -26,25 +50,7 @@ document.getElementById("author").value=" ";
 
  
 
-//loop through the array
-function loopArr(){
-myLibrary.forEach((element,index)=>{
-    console.log(element.bookName); // 100, 200, 300
-    console.log(element.author);
-    console.log(index); // 0, 1, 2
-    let para = document.getElementById("para");
-    para.textContent=element.bookName + " "+ element.author;
-    var table = document.createElement("table");
-    document.body.appendChild(table);
-    // var table = document.getElementById("myTable");
-     var row = table.insertRow(0);
-     var cell1 = row.insertCell(0);
-     var cell2 = row.insertCell(1);
-     cell1.textContent = element.bookName;
-     cell2.innerHTML = element.author;
-   
-});
-}
+
 
 
 

@@ -19,7 +19,9 @@ bookInput.author= getAuthor;
 myLibrary.push(bookInput);
 
 console.log(myLibrary);
-
+//call the table function
+  loopArr();
+//listBooks();
 
 //empty the user input field
 document.getElementById("bookName").value=" ";
@@ -27,7 +29,7 @@ document.getElementById("author").value=" ";
   }
 
  
-/*
+
 //loop through the array
 function loopArr(){
   myLibrary.forEach((element,index)=>{
@@ -50,8 +52,7 @@ function loopArr(){
   });
   }
 
-//call the table function
-loopArr();*/
+
 
 
 

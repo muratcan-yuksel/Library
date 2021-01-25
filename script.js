@@ -39,7 +39,7 @@ let myLibrary= [{bookName:"der steppenwolf", author: "hermann hesse"}, {bookName
         // appending text to button 
         button.appendChild(buttonText); 
         // appending button to div 
-        table.appendChild(button); ;  
+        table.appendChild(button); 
           //take the read/NotRead status and write it
           //actually this "if" is not working at all
           //the Read status comes from above, var buttonText
@@ -49,8 +49,14 @@ let myLibrary= [{bookName:"der steppenwolf", author: "hermann hesse"}, {bookName
           }else {
             buttonText.textContent="Not read";
           }
-       
- 
+  //create remove button
+         var removeButton = document.createElement('BUTTON');   
+   // creating text to be displayed on button 
+        var removeButtonText = document.createTextNode("Delete"); 
+        //append the text to the button
+        removeButton.appendChild(removeButtonText);
+        //append remove button to table
+        table.appendChild(removeButton);
             
         
 

@@ -17,8 +17,11 @@ bookInput.bookName= getBooks;
 bookInput.author= getAuthor;
 //push the objects into the array
 myLibrary.push(bookInput);
-
+//console log to check the library
 console.log(myLibrary);
+//display the new book on a paragraph
+let para = document.getElementById("para");
+para.textContent=getBooks + " "+ getAuthor;
 
 //empty the user input field
 document.getElementById("bookName").value=" ";

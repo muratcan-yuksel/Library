@@ -28,17 +28,30 @@ let myLibrary= [{bookName:"der steppenwolf", author: "hermann hesse"}, {bookName
         var row = table.insertRow(0);
         var cell1 = row.insertCell(0);
         var cell2 = row.insertCell(1);
-        let cell3=row.insertCell(2);
+        //let cell3=row.insertCell(2);
             cell1.textContent = getBooks;
             cell2.innerHTML = getAuthor;
           
+          // creating button element  for the read/NotRead status
+        var button = document.createElement('BUTTON');               
+          // creating text to be displayed on button 
+        var buttonText = document.createTextNode("Read"); 
+        // appending text to button 
+        button.appendChild(buttonText); 
+        // appending button to div 
+        table.appendChild(button); ;  
           //take the read/NotRead status and write it
+          //actually this "if" is not working at all
+          //the Read status comes from above, var buttonText
+          //but since it works...
           if(sessionStorage.getItem("bookStatus") == "Read" || null){
-            cell3.textContent= "Read";
+            buttonText= "Read";
           }else {
-            cell3.textContent="Not read";
+            buttonText.textContent="Not read";
           }
        
+ 
+            
         
 
           

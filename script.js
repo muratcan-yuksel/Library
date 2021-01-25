@@ -32,7 +32,13 @@ let myLibrary= [{bookName:"der steppenwolf", author: "hermann hesse"}, {bookName
             cell1.textContent = getBooks;
             cell2.innerHTML = getAuthor;
             //cell3.textContent=;
-            
+            let bookRead = function () {
+              let read= document.getElementById("read");
+              if (read == true){
+                cell3.textContent="Read";
+              }else{cell3.textContent="Not read"};
+            };
+            bookRead();
 };
 //call the book adding function
 displayBook();

@@ -33,10 +33,11 @@ let myLibrary= [{bookName:"der steppenwolf", author: "hermann hesse"}, {bookName
             cell2.innerHTML = getAuthor;
             //cell3.textContent=;
             let bookRead = function () {
-              let read= document.getElementById("read");
-              if (read == true){
+              let read= document.getElementById("readStatus");
+             console.log(read.options[read.selectedIndex].text);
+              /* if (read.textContent == "Read"){
                 cell3.textContent="Read";
-              }else{cell3.textContent="Not read"};
+              }else{cell3.textContent="Not read"};*/
             };
             bookRead();
 };
@@ -67,4 +68,7 @@ document.getElementById("author").value=" ";
             cell3.textContent="deneme";
           
   });
+  }
+  function myNewFunction(sel) {
+    alert(sel.options[sel.selectedIndex].text);
   }

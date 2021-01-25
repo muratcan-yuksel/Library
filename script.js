@@ -48,30 +48,7 @@ function loopArr(){
      
   });
   }
-
-
-
-
-/*
-  function listBooks(){
-
-
-    for (let i =0; i<myLibrary.length; i++) 
-    {
-      // console.log(`row ${i}`);
-       for (let keys in myLibrary[i]) 
-         {
-          //console.log(` ${myLibrary[i][keys]}`);
-            let x = myLibrary[i][keys];
-            console.log(x);
-            //x is string
-          
-           
-        }
-    }
-    
-  }
-*/
+//display the table, this will be deleted soon, it's only an example 
   function myFunction() {
     var table = document.createElement("table");
     document.body.appendChild(table);

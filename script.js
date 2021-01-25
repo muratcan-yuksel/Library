@@ -21,10 +21,7 @@ myLibrary.push(bookInput);
 console.log(myLibrary);
 //a functin that takes the user input and turns it into a table
 function displayBook(){
-  //display the new book on a paragraph
-  let para = document.getElementById("para");
-      para.textContent=getBooks + " "+ getAuthor;
-    //create table
+     //create table
   var table = document.createElement("table");
       document.body.appendChild(table);
     // var table = document.getElementById("myTable");
@@ -52,9 +49,6 @@ function loopArr(){
       console.log(element.bookName); // 100, 200, 300
       console.log(element.author);
       console.log(index); // 0, 1, 2
-      // write the new book on paragraph
-      let para = document.getElementById("para");
-      para.textContent=element.bookName + " "+ element.author;
       //create table
       var table = document.createElement("table");
       document.body.appendChild(table);

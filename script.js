@@ -28,8 +28,11 @@ let myLibrary= [{bookName:"der steppenwolf", author: "hermann hesse"}, {bookName
         var row = table.insertRow(0);
         var cell1 = row.insertCell(0);
         var cell2 = row.insertCell(1);
+        let cell3=row.insertCell(2);
             cell1.textContent = getBooks;
             cell2.innerHTML = getAuthor;
+            //cell3.textContent=;
+            
 };
 //call the book adding function
 displayBook();
@@ -54,6 +57,8 @@ document.getElementById("author").value=" ";
             var cell2 = row.insertCell(1);
             cell1.textContent = element.bookName;
             cell2.innerHTML = element.author;
+            let cell3=row.insertCell(2);
+            cell3.textContent="deneme";
           
   });
   }

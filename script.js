@@ -38,15 +38,10 @@ let myLibrary= [{bookName:"der steppenwolf", author: "hermann hesse"}, {bookName
           }else {
             cell3.textContent="Not read";
           }
+       
         
 
-            /*
-              let read= document.getElementById("readStatus");
-             console.log(read.options[read.selectedIndex].text);
-              /* if (read.textContent == "Read"){
-                cell3.textContent="Read";
-              }else{cell3.textContent="Not read"};*/
-            
+          
             
 };
 //call the book adding function

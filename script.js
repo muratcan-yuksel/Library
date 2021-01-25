@@ -1,11 +1,11 @@
+//Array that scores all the books
 let myLibrary= [{bookName:"der steppenwolf", author: "hermann hesse"}, {bookName: "underground", author:"dostoyevski"}];
-
+//The object constructor
 function Book(bookName, author) {
-    // the constructor...
     this.bookName= bookName,
     this.author= author
   }
-  
+  //The function that adds books to the myLibrary array
   function addBookToLibrary() {
 // get the user input 
 let getBooks= document.getElementById("bookName").value;

@@ -19,14 +19,30 @@ bookInput.author= getAuthor;
 myLibrary.push(bookInput);
 //console log to check the library
 console.log(myLibrary);
-//display the new book on a paragraph
-let para = document.getElementById("para");
-para.textContent=getBooks + " "+ getAuthor;
+//a functin that takes the user input and turns it into a table
+function displayBook(){
+  //display the new book on a paragraph
+  let para = document.getElementById("para");
+      para.textContent=getBooks + " "+ getAuthor;
+    //create table
+  var table = document.createElement("table");
+      document.body.appendChild(table);
+    // var table = document.getElementById("myTable");
+  var row = table.insertRow(0);
+  var cell1 = row.insertCell(0);
+  var cell2 = row.insertCell(1);
+      cell1.textContent = getBooks;
+      cell2.innerHTML = getAuthor;
+};
+//call the book adding function
+displayBook();
 
 //empty the user input field
 document.getElementById("bookName").value=" ";
 document.getElementById("author").value=" ";
   }
+
+
 
  
 

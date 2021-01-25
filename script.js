@@ -32,14 +32,18 @@ let myLibrary= [{bookName:"der steppenwolf", author: "hermann hesse"}, {bookName
             cell1.textContent = getBooks;
             cell2.innerHTML = getAuthor;
             //cell3.textContent=;
-            let bookRead = function () {
+          
+
+        
+
+            /*
               let read= document.getElementById("readStatus");
              console.log(read.options[read.selectedIndex].text);
               /* if (read.textContent == "Read"){
                 cell3.textContent="Read";
               }else{cell3.textContent="Not read"};*/
-            };
-            bookRead();
+            
+            
 };
 //call the book adding function
 displayBook();
@@ -69,6 +73,10 @@ document.getElementById("author").value=" ";
           
   });
   }
-  function myNewFunction(sel) {
-    alert(sel.options[sel.selectedIndex].text);
+//gets the read/notRead part upon change and saves it into session storage
+//if the dropdown menu is left untouched, the value will be null
+//so an if statement will be used while making use of this part
+  function getReadStatus(sel) {
+    let bookStatus1 = (sel.options[sel.selectedIndex].text);
+     sessionStorage.setItem("bookStatus", bookStatus1);
   }

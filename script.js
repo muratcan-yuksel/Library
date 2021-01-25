@@ -31,9 +31,13 @@ let myLibrary= [{bookName:"der steppenwolf", author: "hermann hesse"}, {bookName
         let cell3=row.insertCell(2);
             cell1.textContent = getBooks;
             cell2.innerHTML = getAuthor;
-            //cell3.textContent=;
           
-
+          //take the read/NotRead status and write it
+          if(sessionStorage.getItem("bookStatus") == "Read" || null){
+            cell3.textContent= "Read";
+          }else {
+            cell3.textContent="Not read";
+          }
         
 
             /*
@@ -79,4 +83,4 @@ document.getElementById("author").value=" ";
   function getReadStatus(sel) {
     let bookStatus1 = (sel.options[sel.selectedIndex].text);
      sessionStorage.setItem("bookStatus", bookStatus1);
-  }
+    }

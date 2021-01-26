@@ -39,15 +39,13 @@ let myLibrary= [{bookName:"der steppenwolf", author: "hermann hesse"}, {bookName
               
         table.appendChild(button); 
           //take the read/NotRead status and write it
-          //actually this "if" is not working at all
-          //the Read status comes from above, var buttonText
-          //but since it works...
+         
           if(sessionStorage.getItem("bookStatus") == "Read" || sessionStorage.getItem("bookStatus") ==  null){
             button.innerHTML= "Read";
           }else if (sessionStorage.getItem("bookStatus") == "Not Read") {
             button.innerHTML="Not Read";
           }
-          
+
           //set attribute for swapping texts on click
         button.setAttribute("data-text-swap", "Not Read");
         button.setAttribute("data-text-original", "Read");
@@ -106,8 +104,15 @@ document.getElementById("author").value=" ";
 //gets the read/notRead part upon change and saves it into session storage
 //if the dropdown menu is left untouched, the value will be null
 //so an if statement will be used while making use of this part
-  function getReadStatus(sel) {
+ /* function getReadStatus(sel) {
     let bookStatus1 = (sel.options[sel.selectedIndex].text);
      sessionStorage.setItem("bookStatus", bookStatus1);
-    }
+    }*/
+
 //maybe the above one can be done with data attributes too?
+function GetSelectedItem(el)
+{
+    var e = document.getElementById("BookStatus");
+    var strSel = "The Value is: " + e.options[e.selectedIndex].value + " and text is: " + e.options[e.selectedIndex].text;
+    alert(strSel);
+}

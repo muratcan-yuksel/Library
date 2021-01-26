@@ -46,7 +46,7 @@ let myLibrary= [{bookName:"der steppenwolf", author: "hermann hesse"}, {bookName
           //but since it works...
           if(sessionStorage.getItem("bookStatus") == "Read" || null){
             buttonText= "Read";
-          }else {
+          }else if (sessionStorage.getItem("bookStatus") == "Not Read") {
             buttonText.textContent="Not read";
           }
   //create remove button
@@ -88,3 +88,10 @@ document.getElementById("author").value=" ";
           
   });
   }
+//gets the read/notRead part upon change and saves it into session storage
+//if the dropdown menu is left untouched, the value will be null
+//so an if statement will be used while making use of this part
+  function getReadStatus(sel) {
+    let bookStatus1 = (sel.options[sel.selectedIndex].text);
+     sessionStorage.setItem("bookStatus", bookStatus1);
+    }

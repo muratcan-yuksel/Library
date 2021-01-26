@@ -5,17 +5,6 @@ let myLibrary= [{bookName:"der steppenwolf", author: "hermann hesse"}, {bookName
         this.bookName= bookName,
         this.author= author
   }
- //function that changes the books read/Notread status on click
-          //get the classname "statusButton"
-          function changingButtons () {
-            let changeStatusButton = document.getElementsByClassName("statusButton");
-           console.log(changeStatusButton);
-            
-            changeStatusButton.addEventListener("click", function(e){
-             console.log("Clicked");
-            })
-          }
-
   //The function that adds books to the myLibrary array
   function addBookToLibrary() {
         // get the user input 
@@ -44,11 +33,11 @@ let myLibrary= [{bookName:"der steppenwolf", author: "hermann hesse"}, {bookName
             cell2.innerHTML = getAuthor;
           
           // creating button element  for the read/NotRead status
-        var button = document.createElement('BUTTON');     
+        let button = document.createElement('BUTTON');     
         //create a class for these buttons
         button.className="statusButton";         
           // creating text to be displayed on button 
-        var buttonText = document.createTextNode("Read"); 
+        let buttonText = document.createTextNode("Read"); 
         // appending text to button 
         button.appendChild(buttonText); 
         // appending button to div 
@@ -57,15 +46,20 @@ let myLibrary= [{bookName:"der steppenwolf", author: "hermann hesse"}, {bookName
           //actually this "if" is not working at all
           //the Read status comes from above, var buttonText
           //but since it works...
-          if(sessionStorage.getItem("bookStatus") == "Read" || null){
-            buttonText= "Read";
+          if(sessionStorage.getItem("bookStatus") == "Read" || sessionStorage.getItem("bookStatus") ==  null){
+            button.innerHTML= "Read";
           }else if (sessionStorage.getItem("bookStatus") == "Not Read") {
-            buttonText.textContent="Not read";
+            button.innerHTML="Not Read";
           }
          
-          changingButtons ()
-            
-          
+          //function that changes the books read/Notread status on click
+         button.addEventListener("click", function (e){
+          if (button.innerHTML= "Read"){
+            button.innerHTML= "Not Read";
+          }else if (button.innerHTML="Not Read"){
+            button.innerHTML= "Read";
+          }
+         })
 
 
   //create remove button

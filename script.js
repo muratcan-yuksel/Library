@@ -36,11 +36,6 @@ let myLibrary= [{bookName:"der steppenwolf", author: "hermann hesse"}, {bookName
         let button = document.createElement('BUTTON');     
         //create a class for these buttons
         button.className="statusButton";         
-          // creating text to be displayed on button 
-        let buttonText = document.createTextNode("Read"); 
-        // appending text to button 
-        button.appendChild(buttonText); 
-        // appending button to div 
         table.appendChild(button); 
           //take the read/NotRead status and write it
           //actually this "if" is not working at all
@@ -54,10 +49,12 @@ let myLibrary= [{bookName:"der steppenwolf", author: "hermann hesse"}, {bookName
          
           //function that changes the books read/Notread status on click
          button.addEventListener("click", function (e){
-          if (button.innerHTML= "Read"){
-            button.innerHTML= "Not Read";
-          }else if (button.innerHTML="Not Read"){
-            button.innerHTML= "Read";
+          if (button.innerHTML= "Not Read"){
+            button.textContent= "Read"
+          }
+         
+          else if (button.innerHTML= "Read"){
+            button.textContent= "Not Read";
           }
          })
 

@@ -35,7 +35,11 @@ let myLibrary= [{bookName:"der steppenwolf", author: "hermann hesse"}, {bookName
           // creating button element  for the read/NotRead status
         let button = document.createElement('BUTTON');     
         //create a class for these buttons
-        button.className="statusButton";         
+        button.className="statusButton";     
+        //set attribute for swapping texts on click
+        button.setAttribute("data-text-noRead", "Not Read");
+        button.setAttribute("data-text-read", "Read");
+        
         table.appendChild(button); 
           //take the read/NotRead status and write it
           //actually this "if" is not working at all
@@ -48,15 +52,7 @@ let myLibrary= [{bookName:"der steppenwolf", author: "hermann hesse"}, {bookName
           }
          
           //function that changes the books read/Notread status on click
-         button.addEventListener("click", function (e){
-          if (button.innerHTML= "Not Read"){
-            button.textContent= "Read"
-          }
          
-          else if (button.innerHTML= "Read"){
-            button.textContent= "Not Read";
-          }
-         })
 
 
   //create remove button
@@ -67,6 +63,8 @@ let myLibrary= [{bookName:"der steppenwolf", author: "hermann hesse"}, {bookName
         removeButton.appendChild(removeButtonText);
         //append remove button to table
         table.appendChild(removeButton);
+
+       
             
 };
 //call the book adding function
@@ -105,3 +103,4 @@ document.getElementById("author").value=" ";
     let bookStatus1 = (sel.options[sel.selectedIndex].text);
      sessionStorage.setItem("bookStatus", bookStatus1);
     }
+//maybe the above one can be done with data attributes too?

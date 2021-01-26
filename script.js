@@ -58,10 +58,6 @@ let myLibrary= [{bookName:"der steppenwolf", author: "hermann hesse"}, {bookName
         //append remove button to table
         table.appendChild(removeButton);
             
-        
-
-          
-            
 };
 //call the book adding function
 displayBook();
@@ -87,14 +83,8 @@ document.getElementById("author").value=" ";
             cell1.textContent = element.bookName;
             cell2.innerHTML = element.author;
             let cell3=row.insertCell(2);
+            //A button needs to be added here 
             cell3.textContent="deneme";
           
   });
   }
-//gets the read/notRead part upon change and saves it into session storage
-//if the dropdown menu is left untouched, the value will be null
-//so an if statement will be used while making use of this part
-  function getReadStatus(sel) {
-    let bookStatus1 = (sel.options[sel.selectedIndex].text);
-     sessionStorage.setItem("bookStatus", bookStatus1);
-    }

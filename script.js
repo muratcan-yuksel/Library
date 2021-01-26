@@ -36,10 +36,7 @@ let myLibrary= [{bookName:"der steppenwolf", author: "hermann hesse"}, {bookName
         let button = document.createElement('BUTTON');     
         //create a class for these buttons
         button.className="statusButton";     
-        //set attribute for swapping texts on click
-        button.setAttribute("data-text-noRead", "Not Read");
-        button.setAttribute("data-text-read", "Read");
-        
+              
         table.appendChild(button); 
           //take the read/NotRead status and write it
           //actually this "if" is not working at all
@@ -50,9 +47,19 @@ let myLibrary= [{bookName:"der steppenwolf", author: "hermann hesse"}, {bookName
           }else if (sessionStorage.getItem("bookStatus") == "Not Read") {
             button.innerHTML="Not Read";
           }
-         
+          
+          //set attribute for swapping texts on click
+        button.setAttribute("data-text-swap", "Not Read");
+        button.setAttribute("data-text-original", "Read");
           //function that changes the books read/Notread status on click
-         
+          button.addEventListener('click', function() {
+            if (button.getAttribute("data-text-swap") == button.innerHTML) {
+              button.innerHTML = button.getAttribute("data-text-original");
+            } else {
+              button.setAttribute("data-text-original", button.innerHTML);
+              button.innerHTML = button.getAttribute("data-text-swap");
+            }
+          }, false);
 
 
   //create remove button

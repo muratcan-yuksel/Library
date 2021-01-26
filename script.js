@@ -33,7 +33,9 @@ let myLibrary= [{bookName:"der steppenwolf", author: "hermann hesse"}, {bookName
             cell2.innerHTML = getAuthor;
           
           // creating button element  for the read/NotRead status
-        var button = document.createElement('BUTTON');               
+        var button = document.createElement('BUTTON');     
+        //create a class for these buttons
+        button.className="statusButton";         
           // creating text to be displayed on button 
         var buttonText = document.createTextNode("Read"); 
         // appending text to button 
@@ -49,6 +51,9 @@ let myLibrary= [{bookName:"der steppenwolf", author: "hermann hesse"}, {bookName
           }else if (sessionStorage.getItem("bookStatus") == "Not Read") {
             buttonText.textContent="Not read";
           }
+          
+
+
   //create remove button
          var removeButton = document.createElement('BUTTON');   
    // creating text to be displayed on button 

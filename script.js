@@ -5,6 +5,17 @@ let myLibrary= [{bookName:"der steppenwolf", author: "hermann hesse"}, {bookName
         this.bookName= bookName,
         this.author= author
   }
+ //function that changes the books read/Notread status on click
+          //get the classname "statusButton"
+          function changingButtons () {
+            let changeStatusButton = document.getElementsByClassName("statusButton");
+           console.log(changeStatusButton);
+            
+            changeStatusButton.addEventListener("click", function(e){
+             console.log("Clicked");
+            })
+          }
+
   //The function that adds books to the myLibrary array
   function addBookToLibrary() {
         // get the user input 
@@ -51,6 +62,9 @@ let myLibrary= [{bookName:"der steppenwolf", author: "hermann hesse"}, {bookName
           }else if (sessionStorage.getItem("bookStatus") == "Not Read") {
             buttonText.textContent="Not read";
           }
+         
+          changingButtons ()
+            
           
 
 

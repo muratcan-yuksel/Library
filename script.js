@@ -84,10 +84,26 @@ function deleteButton () {
               function initRemoveButton(){
                 console.log("deleteed");
                 this.parentNode.parentNode.removeChild(this.parentNode);
+
+                function findObject (obj) {
+                    console.log({bookName: getBooks, author: getAuthor});
+                  return obj == {bookName: getBooks, author: getAuthor};
+                 console.log(obj);
+                  }    
+
+                  function findArrIndex(){
+                    if(findObject == true){
+                       let deneme1 =  myLibrary.findIndex(findObject);
+                      alert(deneme1);
+                    }
                   }
+                  findArrIndex();
+                
+              findObject();
+              }
 
    };
-
+//call delete button function
 deleteButton();
 
 

@@ -20,71 +20,76 @@ let myLibrary= [{bookName:"der steppenwolf", author: "hermann hesse"}, {bookName
         //console log to check the library
         console.log(myLibrary);
         //a functin that takes the user input and turns it into a table
-  function displayBook(){
-          //create table
-        var table = document.createElement("table");
-            document.body.appendChild(table);
-          // var table = document.getElementById("myTable");
-        var row = table.insertRow(0);
-        var cell1 = row.insertCell(0);
-        var cell2 = row.insertCell(1);
-        //let cell3=row.insertCell(2);
-            cell1.textContent = getBooks;
-            cell2.innerHTML = getAuthor;
-          
-          // creating button element  for the read/NotRead status
-        let button = document.createElement('BUTTON');     
-        //create a class for these buttons
-        button.className="statusButton";     
-              
-        table.appendChild(button); 
-          //take the read/NotRead status and write it
-          var e = document.getElementById("BookStatus");
-          //the value and text examples are in the code below, let's keep it for possible further reference
-          //var strSel = "The Value is: " + e.options[e.selectedIndex].value + " and text is: " + e.options[e.selectedIndex].text;
-         // alert(strSel);
-         //this is the dropdown value, chosen
-          let statusBook= e.options[e.selectedIndex].text;
-       
-          if (statusBook == "Read"){
-            button.innerHTML= "Read";
-          }else if (statusBook=="Not Read"){
-            button.innerHTML= "Not Read";
-          }
-        
-
-          //set attribute for swapping texts on click
-        button.setAttribute("data-text-swap", "Not Read");
-        button.setAttribute("data-text-original", "Read");
-          //function that changes the books read/Notread status on click
-          button.addEventListener('click', function() {
-            if (button.getAttribute("data-text-swap") == button.innerHTML) {
-              button.innerHTML = button.getAttribute("data-text-original");
-            } else {
-              button.setAttribute("data-text-original", button.innerHTML);
-              button.innerHTML = button.getAttribute("data-text-swap");
-            }
-          }, false);
-
-
-  //create remove button
-         var removeButton = document.createElement('BUTTON');   
-   // creating text to be displayed on button 
-        var removeButtonText = document.createTextNode("Delete"); 
-        //append the text to the button
-        removeButton.appendChild(removeButtonText);
-        //append remove button to table
-        table.appendChild(removeButton);
-
-       
+        console.log(getBooks, getAuthor);
+        function displayBook(){
+                //create table
+              var table = document.createElement("table");
+                  document.body.appendChild(table);
+                // var table = document.getElementById("myTable");
+              var row = table.insertRow(0);
+              var cell1 = row.insertCell(0);
+              var cell2 = row.insertCell(1);
+              //let cell3=row.insertCell(2);
+                  cell1.textContent = getBooks;
+                  cell2.innerHTML = getAuthor;
+                
+                // creating button element  for the read/NotRead status
+              let button = document.createElement('BUTTON');     
+              //create a class for these buttons
+              button.className="statusButton";     
+                    
+              table.appendChild(button); 
+                //take the read/NotRead status and write it
+                var e = document.getElementById("BookStatus");
+                //the value and text examples are in the code below, let's keep it for possible further reference
+                //var strSel = "The Value is: " + e.options[e.selectedIndex].value + " and text is: " + e.options[e.selectedIndex].text;
+              // alert(strSel);
+              //this is the dropdown value, chosen
+                let statusBook= e.options[e.selectedIndex].text;
             
-};
-//call the book adding function
-displayBook();
+                if (statusBook == "Read"){
+                  button.innerHTML= "Read";
+                }else if (statusBook=="Not Read"){
+                  button.innerHTML= "Not Read";
+                }
+              
 
-//empty the user input field
-document.getElementById("bookName").value=" ";
-document.getElementById("author").value=" ";
+                //set attribute for swapping texts on click
+              button.setAttribute("data-text-swap", "Not Read");
+              button.setAttribute("data-text-original", "Read");
+                //function that changes the books read/Notread status on click
+                button.addEventListener('click', function() {
+                  if (button.getAttribute("data-text-swap") == button.innerHTML) {
+                    button.innerHTML = button.getAttribute("data-text-original");
+                  } else {
+                    button.setAttribute("data-text-original", button.innerHTML);
+                    button.innerHTML = button.getAttribute("data-text-swap");
+                  }
+                }, false);
+
+function removeButton () {
+        //create remove button
+              var removeButton = document.createElement('BUTTON');   
+        // creating text to be displayed on button 
+              var removeButtonText = document.createTextNode("Delete"); 
+              //append the text to the button
+              removeButton.appendChild(removeButtonText);
+              //append remove button to table
+              table.appendChild(removeButton);
+              console.log("this is a functioney")
+};
+
+removeButton();
+
+            
+                  
+      };
+      //call the book adding function
+      displayBook();
+
+      //empty the user input field
+      document.getElementById("bookName").value=" ";
+      document.getElementById("author").value=" ";
   }
 
 //loop through the array and display the books as table

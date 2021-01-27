@@ -78,12 +78,13 @@ function deleteButton () {
               table.appendChild(removeButton);
               console.log("this is removeButton function")
               console.log(`Book name ${getBooks}, author name ${getAuthor}`);
-             
+             //add an event listener to the delete button
               removeButton.addEventListener("click", initRemoveButton, false);
+              //delete its parent element 
               function initRemoveButton(){
                 console.log("deleteed");
-                
-                }
+                this.parentNode.parentNode.removeChild(this.parentNode);
+                  }
 
    };
 

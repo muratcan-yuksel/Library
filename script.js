@@ -19,9 +19,9 @@ let myLibrary= [{bookName:"der steppenwolf", author: "hermann hesse"}, {bookName
         myLibrary.push(bookInput);
         //console log to check the library
         console.log(myLibrary);
+
         //a functin that takes the user input and turns it into a table
-        console.log(getBooks, getAuthor);
-        function displayBook(){
+              function displayBook(){
                 //create table
               var table = document.createElement("table");
                   document.body.appendChild(table);
@@ -76,7 +76,8 @@ function removeButton () {
               removeButton.appendChild(removeButtonText);
               //append remove button to table
               table.appendChild(removeButton);
-              console.log("this is a functioney")
+              console.log("this is removeButton function")
+              console.log(`Book name ${getBooks}, author name ${getAuthor}`);
 };
 
 removeButton();

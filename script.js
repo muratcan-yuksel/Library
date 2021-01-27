@@ -84,22 +84,11 @@ function deleteButton () {
               function initRemoveButton(){
                 console.log("deleteed");
                 this.parentNode.parentNode.removeChild(this.parentNode);
-
-                function findObject (obj) {
-                    console.log({bookName: getBooks, author: getAuthor});
-                  return obj == {bookName: getBooks, author: getAuthor};
-                 console.log(obj);
-                  }    
-
-                  function findArrIndex(){
-                    if(findObject == true){
-                       let deneme1 =  myLibrary.findIndex(findObject);
-                      alert(deneme1);
-                    }
-                  }
-                  findArrIndex();
-                
-              findObject();
+                //find the index that contains the book name and author related to the delete button
+              index= myLibrary.findIndex(obj=> obj.bookName === getBooks && obj.author === getAuthor);
+              console.log(index);
+              //remove tat index
+              myLibrary.splice(index,1);
               }
 
    };

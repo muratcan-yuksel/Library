@@ -17,9 +17,7 @@ let myLibrary= [{bookName:"der steppenwolf", author: "hermann hesse"}, {bookName
         bookInput.author= getAuthor;
         //push the objects into the array
         myLibrary.push(bookInput);
-        //console log to check the library
-        console.log(myLibrary);
-
+           
         //a functin that takes the user input and turns it into a table
               function displayBook(){
                 //create table
@@ -76,29 +74,21 @@ function deleteButton () {
               removeButton.appendChild(removeButtonText);
               //append remove button to table
               table.appendChild(removeButton);
-              console.log("this is removeButton function")
-              console.log(`Book name ${getBooks}, author name ${getAuthor}`);
-             //add an event listener to the delete button
+                //add an event listener to the delete button
               removeButton.addEventListener("click", initRemoveButton, false);
               //delete its parent element 
               function initRemoveButton(){
-                console.log("deleteed");
                 this.parentNode.parentNode.removeChild(this.parentNode);
                 //find the index that contains the book name and author related to the delete button
               index= myLibrary.findIndex(obj=> obj.bookName === getBooks && obj.author === getAuthor);
-              console.log(index);
-              //remove tat index
+                //remove tat index
               myLibrary.splice(index,1);
               }
 
    };
 //call delete button function
 deleteButton();
-
-
-
-            
-                  
+           
       };
       //call the book adding function
       displayBook();
@@ -111,9 +101,6 @@ deleteButton();
 //loop through the array and display the books as table
   function loopArr(){
           myLibrary.forEach((element,index)=>{
-            console.log(element.bookName); // 100, 200, 300
-            console.log(element.author);
-            console.log(index); // 0, 1, 2
             //create table
             var table = document.createElement("table");
             document.body.appendChild(table);

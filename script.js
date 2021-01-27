@@ -113,6 +113,14 @@ document.getElementById("author").value=" ";
 function GetSelectedItem(el)
 {
     var e = document.getElementById("BookStatus");
-    var strSel = "The Value is: " + e.options[e.selectedIndex].value + " and text is: " + e.options[e.selectedIndex].text;
-    alert(strSel);
+    //var strSel = "The Value is: " + e.options[e.selectedIndex].value + " and text is: " + e.options[e.selectedIndex].text;
+   // alert(strSel);
+    let statusBook= e.options[e.selectedIndex].text;
+    console.log(statusBook);
+    if (statusBook == "Read"){
+      button.innerHTML= "Read";
+    }else if (statusBook=="Not Read"){
+      button.innerHTML= "Not Read";
+    }
+    console.log(statusBook == "Read");
 }

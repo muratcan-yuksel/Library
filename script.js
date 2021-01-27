@@ -67,7 +67,7 @@ let myLibrary= [{bookName:"der steppenwolf", author: "hermann hesse"}, {bookName
                   }
                 }, false);
 
-function removeButton () {
+function deleteButton () {
         //create remove button
               var removeButton = document.createElement('BUTTON');   
         // creating text to be displayed on button 
@@ -78,9 +78,18 @@ function removeButton () {
               table.appendChild(removeButton);
               console.log("this is removeButton function")
               console.log(`Book name ${getBooks}, author name ${getAuthor}`);
-};
+             
+              removeButton.addEventListener("click", initRemoveButton, false);
+              function initRemoveButton(){
+                console.log("deleteed");
+                
+                }
 
-removeButton();
+   };
+
+deleteButton();
+
+
 
             
                   

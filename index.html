@@ -17,17 +17,26 @@
 
   <div class="container">
     <div class= "row">
-<h1>My library</h1>
+      <h1>My library</h1>
+  </div>
+<div class="row">
+  <div class="three columns">
+    Book Name <input type="text" id="bookName">
+  </div>
+  <div class="three columns">  
+    Author <input type="text" id="author">
+    </div>
+  <div class="three columns">    
+    <select name="BookStatus" id="BookStatus">
+      <option class="readStatus" value="read">Read</option>
+      <option class="readStatus" value="notRead">Not Read</option>
+     </select>
+  </div>
+  <div class="three columns">  
+    <input type="submit" value="Submit" onclick="addBookToLibrary()"/><br>
+  </div>
+
 </div>
-
-Book Name <input type="text" id="bookName">
-Author <input type="text" id="author">
-<input type="submit" value="Submit" onclick="addBookToLibrary()"/><br>
-
-<select name="BookStatus" id="BookStatus">
-  <option class="readStatus" value="read">Read</option>
-  <option class="readStatus" value="notRead">Not Read</option>
- </select>
 
 <table id="table1">
     <tr>

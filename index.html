@@ -8,6 +8,8 @@
     <link href= "normalize.css" rel="stylesheet">
     <link href= "skeleton.css" rel="stylesheet">
 
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
     <title>Library</title>
     
 </head>
@@ -22,22 +24,24 @@
       </div>
   </div>
 <div class="row">
-  <div class="four columns">
-    Book Name <input type="text" id="bookName">
+  <form>
+  <div class="five columns">
+    <label for="bookName">Book Name</label>
+    <input type="text" id="bookName" class="u-full-width" >
   </div>
-  <div class="four columns">  
-    Author <input type="text" id="author">
+  <div class="five columns">  
+    <label for="author">Author</label>
+    <input type="text" id="author class="u-full-width" ">
     </div>
-  <div class="four columns">    
-    <select name="BookStatus" id="BookStatus">
+  <div class="two columns">    
+    <label for="BookStatus">Status</label>
+    <select name="BookStatus" id="BookStatus" class="u-full-width" >
       <option class="readStatus" value="read">Read</option>
       <option class="readStatus" value="notRead">Not Read</option>
      </select>
   </div>
-  <div class="three columns">  
-    <input type="submit" value="Submit" onclick="addBookToLibrary()"/><br>
-  </div>
-
+ </form>
+  <input type="submit" class="button-primary" value="Submit" onclick="addBookToLibrary()"/><br>
 </div>
 
 <table id="table1">

@@ -20,19 +20,19 @@
   <div class="container">
     <div class= "row">
       <div class="twelve columns" style="margin-top: 10%;">
-      <h1>My library</h1>
+         <h1>My library</h1>
       </div>
   </div>
-<div class="row">
-  <form>
-  <div class="five columns">
-    <label for="bookName">Book Name</label>
-    <input type="text" id="bookName" class="u-full-width" >
-  </div>
+  <div class="row">
+    <form>
+       <div class="five columns">
+          <label for="bookName">Book Name</label>
+          <input type="text" id="bookName" class="u-full-width" >
+       </div>
   <div class="five columns">  
     <label for="author">Author</label>
-    <input type="text" id="author class="u-full-width" ">
-    </div>
+    <input type="text" id="author" class="u-full-width">
+  </div>
   <div class="two columns">    
     <label for="BookStatus">Status</label>
     <select name="BookStatus" id="BookStatus" class="u-full-width" >
@@ -40,17 +40,20 @@
       <option class="readStatus" value="notRead">Not Read</option>
      </select>
   </div>
- </form>
-  <input type="submit" class="button-primary" value="Submit" onclick="addBookToLibrary()"/><br>
+ <input type="submit" class="button-primary" value="Submit" onclick="addBookToLibrary()"/><br>
+</form>
 </div>
-
-<table id="table1">
+<div class="row">
+  <div class="twelve columns">
+<table id="table1" class="twelve columns">
     <tr>
       <th>Book Name</th>
       <th>Author</th>
       <th>Status</th>
      </tr>
     </table>
+    
   </div>
+</div>
 </body>
 </html>

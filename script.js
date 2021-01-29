@@ -35,12 +35,11 @@ let myLibrary= [{bookName:"Der steppenwolf", author: "Hermann Hesse"}, {bookName
                      `;
          tableBody.insertAdjacentHTML("afterbegin", htmlTable);
                 
+              
                 // creating button element  for the read/NotRead status
-              let button = document.createElement('BUTTON');     
-              //create a class for these buttons
-              button.className="statusButton";     
+                let button = document.querySelector(".status-button");   
                     
-              table.appendChild(button); 
+             
                 //take the read/NotRead status and write it
                 var e = document.getElementById("BookStatus");
                 //the value and text examples are in the code below, let's keep it for possible further reference
@@ -57,17 +56,17 @@ let myLibrary= [{bookName:"Der steppenwolf", author: "Hermann Hesse"}, {bookName
               
 
                 //set attribute for swapping texts on click
-              button.setAttribute("data-text-swap", "Not Read");
-              button.setAttribute("data-text-original", "Read");
-                //function that changes the books read/Notread status on click
-                button.addEventListener('click', function() {
-                  if (button.getAttribute("data-text-swap") == button.innerHTML) {
-                    button.innerHTML = button.getAttribute("data-text-original");
-                  } else {
-                    button.setAttribute("data-text-original", button.innerHTML);
-                    button.innerHTML = button.getAttribute("data-text-swap");
-                  }
-                }, false);
+                button.setAttribute("data-text-swap", "Not Read");
+                button.setAttribute("data-text-original", "Read");
+                  //function that changes the books read/Notread status on click
+                  button.addEventListener('click', function() {
+                    if (button.getAttribute("data-text-swap") == button.innerHTML) {
+                      button.innerHTML = button.getAttribute("data-text-original");
+                    } else {
+                      button.setAttribute("data-text-original", button.innerHTML);
+                      button.innerHTML = button.getAttribute("data-text-swap");
+                    }
+                  }, false);
 
 function deleteButton () {
         //create remove button

@@ -90,58 +90,50 @@ displayBook();
 function loopArr(){
   myLibrary.forEach((element,index)=>{
     const htmlTable = `
-       <table class="u-full-width">
-          <thead>
-            <tr>
+      <table class="u-full-width">
+        <thead>
+          <tr>
             <td>${element.bookName}</td>
-        <td>${element.author}</td>
-        <td><button class="status-button">${"Read"}</button></td>
-        <td><button class="delete">delete</button></td>
-            </tr>
-            </thead>
-            </table>
-                       
-            `;
+            <td>${element.author}</td>
+            <td><button class="status-button">${"Read"}</button></td>
+            <td><button class="delete">delete</button></td>
+          </tr>
+        </thead>
+      </table>            
+    `;
 tableBody.insertAdjacentHTML("afterbegin", htmlTable);      
-          
-                // creating button element  for the read/NotRead status
-                let button = document.querySelector(".status-button");
-              
-                  //set attribute for swapping texts on click
-              button.setAttribute("data-text-swap", "Not Read");
-              button.setAttribute("data-text-original", "Read");
-                //function that changes the books read/Notread status on click
-                button.addEventListener('click', function() {
-                  if (button.getAttribute("data-text-swap") == button.innerHTML) {
-                    button.innerHTML = button.getAttribute("data-text-original");
-                  } else {
-                    button.setAttribute("data-text-original", button.innerHTML);
-                    button.innerHTML = button.getAttribute("data-text-swap");
-                  }
-                }, false);
-
-                function deleteButton () {
-                  //create remove button
-                        var removeButton = document.querySelector(".delete"); 
-                        console.log(removeButton.parentNode.parentNode);
-                 
-                          //add an event listener to the delete button
-                        removeButton.addEventListener("click", initRemoveButton, false);
-                        //delete its parent element 
-                        function initRemoveButton(){
-                          this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode);
-                          
-                          //find the index that contains the book name and author related to the delete button
-                          //the difference here from the above function is elemen.bookName or author
-                        index= myLibrary.findIndex(obj=> obj.bookName === element.bookName && obj.author === element.author);
-                          //remove that index
-                        myLibrary.splice(index,1);
-
-                        }
-          
+  // creating button element  for the read/NotRead status
+  let button = document.querySelector(".status-button");      
+   //set attribute for swapping texts on click
+      button.setAttribute("data-text-swap", "Not Read");
+      button.setAttribute("data-text-original", "Read");
+   //function that changes the books read/Notread status on click
+      button.addEventListener('click', function() {
+        if (button.getAttribute("data-text-swap") == button.innerHTML) {
+          button.innerHTML = button.getAttribute("data-text-original");
+        } else {
+          button.setAttribute("data-text-original", button.innerHTML);
+          button.innerHTML = button.getAttribute("data-text-swap");
+            }
+    }, false);
+    function deleteButton () {
+      //create remove button
+        var removeButton = document.querySelector(".delete"); 
+          console.log(removeButton.parentNode.parentNode);
+           //add an event listener to the delete button
+            removeButton.addEventListener("click", initRemoveButton, false);
+              //delete its parent element 
+                  function initRemoveButton(){
+                      this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode);
+                       //find the index that contains the book name and author related to the delete button
+                       //the difference here from the above function is elemen.bookName or author
+                          index= myLibrary.findIndex(obj=> obj.bookName === element.bookName && obj.author === element.author);
+                            //remove that index
+                            myLibrary.splice(index,1);
+                    }
              };
-          //call delete button function
-          deleteButton();
+//call delete button function
+ deleteButton();
           
           
   });

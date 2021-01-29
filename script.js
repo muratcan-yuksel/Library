@@ -22,17 +22,28 @@ let myLibrary= [{bookName:"Der steppenwolf", author: "Hermann Hesse"}, {bookName
         myLibrary.push(bookInput);
            
         //a function that takes the user input and turns it into a table
-              function displayBook(){
-                //create table
-              var table = document.createElement("table");
-                  document.body.appendChild(table);
-                // var table = document.getElementById("myTable");
-              var row = table.insertRow(0);
-              var cell1 = row.insertCell(0);
-              var cell2 = row.insertCell(1);
-              //let cell3=row.insertCell(2);
-                  cell1.textContent = getBooks;
-                  cell2.innerHTML = getAuthor;
+              function displayBook(){                
+                    const htmlTable = `
+               <table class="u-full-width">
+                  <thead>
+                    <tr>
+                    <td>${getBooks}</td>
+                <td>${getAuthor}</td>
+                <td><button class="status-button">${"Read"}</button></td>
+                <td><button class="delete">delete</button></td>
+                    </tr>
+                    </thead>
+                    </table>
+                               
+                    `;
+        tableBody.insertAdjacentHTML("afterbegin", htmlTable);
+
+
+
+
+
+
+
                 
                 // creating button element  for the read/NotRead status
               let button = document.createElement('BUTTON');     

@@ -98,12 +98,16 @@ deleteButton();
       document.getElementById("author").value=" ";
   }
 
+ 
+ 
 //loop through the array and display the books as table
   function loopArr(){
+     //get the table DİV
+    const tableDiv = document.getElementById("DOMtableDiv");
           myLibrary.forEach((element,index)=>{
             //create table
             var table = document.createElement("table");
-            document.body.appendChild(table);
+            tableDiv.appendChild(table);
             // var table = document.getElementById("myTable");
             var row = table.insertRow(0);
             var cell1 = row.insertCell(0);
@@ -115,7 +119,7 @@ deleteButton();
                 //create a class for these buttons
                 button.className="statusButton";   
                 button.textContent= "Read";  
-                table.appendChild(button); 
+                cell2.appendChild(button); 
 
                   //set attribute for swapping texts on click
               button.setAttribute("data-text-swap", "Not Read");

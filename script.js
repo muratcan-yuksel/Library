@@ -99,42 +99,31 @@ deleteButton();
   }
 
  
- 
+  const addTable = document.querySelector("#DOMtableDiv");
 //loop through the array and display the books as table
   function loopArr(){
-
-    
-  }
-
-  /*
-
-
-     //get the table DİV
-    const tableDiv = document.getElementById("DOMtableDiv");
           myLibrary.forEach((element,index)=>{
-            //create table
-            var table = document.createElement("table");
-            tableDiv.appendChild(table);
-            // var table = document.getElementById("myTable");
-            var row = table.insertRow(0);
-            var cell1 = row.insertCell(0);
-            var cell2 = row.insertCell(1);
-            //button read
-            let cell3=row.insertCell(2);
-            cell3.innerHTML="<button>Read</button>";
-            
-            cell1.textContent = element.bookName;
-            cell2.innerHTML = element.author;
-           
-            
+            const htmlTable = `
+       <table class="u-full-width">
+          <thead>
+            <tr>
+            <td>${element.bookName}</td>
+        <td>${element.author}</td>
+        <td><button class="status-button">${"Read"}</button></td>
+        <td><button class="delete">delete</button></td>
+            </tr>
+            </thead>
+            </table>
+                       
+            `;
+tableBody.insertAdjacentHTML("afterbegin", htmlTable);
+
+
+        
+          
                 // creating button element  for the read/NotRead status
-                let button = document.createElement('BUTTON');     
-                //create a class for these buttons
-                button.className="statusButton";   
-                button.textContent= "Read";  
-                table.appendChild(button); 
-             
-             
+                let button = document.querySelector(".status-button");
+              
                   //set attribute for swapping texts on click
               button.setAttribute("data-text-swap", "Not Read");
               button.setAttribute("data-text-original", "Read");
@@ -148,6 +137,65 @@ deleteButton();
                   }
                 }, false);
 
+                function deleteButton () {
+                  //create remove button
+                        var removeButton = document.querySelector(".delete"); 
+                 
+                          //add an event listener to the delete button
+                        removeButton.addEventListener("click", initRemoveButton, false);
+                        //delete its parent element 
+                        function initRemoveButton(){
+                          this.parentNode.parentNode.removeChild(this.parentNode);
+                          
+                          //find the index that contains the book name and author related to the delete button
+                          //the difference here from the above function is elemen.bookName or author
+                        index= myLibrary.findIndex(obj=> obj.bookName === element.bookName && obj.author === element.author);
+                          //remove that index
+                        myLibrary.splice(index,1);
+
+                        }
+          
+             };
+          //call delete button function
+          deleteButton();
+          
+          
+  });
+  }
+
+
+ /* //create table
+            var table = document.createElement("table");
+            DOMtables.appendChild(table);
+            table.classList.add("u-full-width")
+            // var table = document.getElementById("myTable");
+            
+           const table = document.getElementById("table1");
+            var row = table.insertRow(0);
+            var cell1 = row.insertCell(0);
+           
+            var cell2 = row.insertCell(1);
+            cell1.textContent = element.bookName;
+            cell2.innerHTML = element.author;
+          
+                // creating button element  for the read/NotRead status
+                let button = document.createElement('BUTTON');     
+                //create a class for these buttons
+                button.className="statusButton";   
+                button.textContent= "Read";  
+                table.appendChild(button); 
+                  //set attribute for swapping texts on click
+              button.setAttribute("data-text-swap", "Not Read");
+              button.setAttribute("data-text-original", "Read");
+                //function that changes the books read/Notread status on click
+                button.addEventListener('click', function() {
+                  if (button.getAttribute("data-text-swap") == button.innerHTML) {
+                    button.innerHTML = button.getAttribute("data-text-original");
+                  } else {
+                    button.setAttribute("data-text-original", button.innerHTML);
+                    button.innerHTML = button.getAttribute("data-text-swap");
+                  }
+                }, false);
                 function deleteButton () {
                   //create remove button
                         var removeButton = document.createElement('BUTTON');   
@@ -167,13 +215,9 @@ deleteButton();
                         index= myLibrary.findIndex(obj=> obj.bookName === element.bookName && obj.author === element.author);
                           //remove that index
                         myLibrary.splice(index,1);
-
                         }
           
              };
           //call delete button function
           deleteButton();
-          
-  });
-
-  */
+            */

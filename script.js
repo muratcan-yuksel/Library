@@ -5,6 +5,9 @@ let myLibrary= [{bookName:"Der steppenwolf", author: "Hermann Hesse"}, {bookName
         this.bookName= bookName,
         this.author= author
   }
+//get the table adding element
+  const addTable = document.querySelector("#DOMtableDiv");
+
   //The function that adds books to the myLibrary array
   function addBookToLibrary() {
         // get the user input 
@@ -18,7 +21,7 @@ let myLibrary= [{bookName:"Der steppenwolf", author: "Hermann Hesse"}, {bookName
         //push the objects into the array
         myLibrary.push(bookInput);
            
-        //a functin that takes the user input and turns it into a table
+        //a function that takes the user input and turns it into a table
               function displayBook(){
                 //create table
               var table = document.createElement("table");
@@ -99,7 +102,7 @@ deleteButton();
   }
 
  
-  const addTable = document.querySelector("#DOMtableDiv");
+
 //loop through the array and display the books as table
   function loopArr(){
           myLibrary.forEach((element,index)=>{

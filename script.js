@@ -98,20 +98,24 @@ deleteButton();
       document.getElementById("author").value=" ";
   }
 
+
 //loop through the array and display the books as table
   function loopArr(){
           myLibrary.forEach((element,index)=>{
-            //create table
+           /* //create table
             var table = document.createElement("table");
             DOMtables.appendChild(table);
             table.classList.add("u-full-width")
             // var table = document.getElementById("myTable");
+            
+           const table = document.getElementById("table1");
             var row = table.insertRow(0);
             var cell1 = row.insertCell(0);
            
             var cell2 = row.insertCell(1);
             cell1.textContent = element.bookName;
             cell2.innerHTML = element.author;
+            */
                 // creating button element  for the read/NotRead status
                 let button = document.createElement('BUTTON');     
                 //create a class for these buttons

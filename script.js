@@ -98,10 +98,24 @@ deleteButton();
       document.getElementById("author").value=" ";
   }
 
-
+  let statusBook= e.options[e.selectedIndex].text;
 //loop through the array and display the books as table
   function loopArr(){
           myLibrary.forEach((element,index)=>{
+            const htmlTable = `
+            <tr>
+            <td>${element.bookName}</td>
+        <td>${element.author}</td>
+        <td><button class="status-button">${book.status}</button></td>
+        <td><button class="delete">delete</button></td>
+
+
+            </tr>
+            
+            
+            `
+
+
            /* //create table
             var table = document.createElement("table");
             DOMtables.appendChild(table);

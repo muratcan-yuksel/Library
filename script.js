@@ -99,17 +99,21 @@ deleteButton();
   }
 
  
-  const addTable = document.querySelector("#tableBody");
+  const addTable = document.querySelector("#DOMtableDiv");
 //loop through the array and display the books as table
   function loopArr(){
           myLibrary.forEach((element,index)=>{
             const htmlTable = `
+       <table class="u-full-width">
+          <thead>
             <tr>
             <td>${element.bookName}</td>
         <td>${element.author}</td>
         <td><button class="status-button">${"Read"}</button></td>
         <td><button class="delete">delete</button></td>
             </tr>
+            </thead>
+            </table>
                        
             `;
 tableBody.insertAdjacentHTML("afterbegin", htmlTable);

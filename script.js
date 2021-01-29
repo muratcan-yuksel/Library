@@ -20,26 +20,23 @@ let myLibrary= [{bookName:"Der steppenwolf", author: "Hermann Hesse"}, {bookName
            
         //a functin that takes the user input and turns it into a table
               function displayBook(){
-                const htmlTable = `
-                <table class="u-full-width">
-                   <thead>
-                     <tr>
-                     <td>${element.bookName}</td>
-                 <td>${element.author}</td>
-                 <td><button class="status-button">${"Read"}</button></td>
-                 <td><button class="delete">delete</button></td>
-                     </tr>
-                     </thead>
-                     </table>
-                                
-                     `;
-         tableBody.insertAdjacentHTML("afterbegin", htmlTable);
+                //create table
+              var table = document.createElement("table");
+                  document.body.appendChild(table);
+                // var table = document.getElementById("myTable");
+              var row = table.insertRow(0);
+              var cell1 = row.insertCell(0);
+              var cell2 = row.insertCell(1);
+              //let cell3=row.insertCell(2);
+                  cell1.textContent = getBooks;
+                  cell2.innerHTML = getAuthor;
                 
-              
                 // creating button element  for the read/NotRead status
-                let button = document.querySelector(".status-button");   
+              let button = document.createElement('BUTTON');     
+              //create a class for these buttons
+              button.className="statusButton";     
                     
-             
+              table.appendChild(button); 
                 //take the read/NotRead status and write it
                 var e = document.getElementById("BookStatus");
                 //the value and text examples are in the code below, let's keep it for possible further reference
@@ -56,17 +53,17 @@ let myLibrary= [{bookName:"Der steppenwolf", author: "Hermann Hesse"}, {bookName
               
 
                 //set attribute for swapping texts on click
-                button.setAttribute("data-text-swap", "Not Read");
-                button.setAttribute("data-text-original", "Read");
-                  //function that changes the books read/Notread status on click
-                  button.addEventListener('click', function() {
-                    if (button.getAttribute("data-text-swap") == button.innerHTML) {
-                      button.innerHTML = button.getAttribute("data-text-original");
-                    } else {
-                      button.setAttribute("data-text-original", button.innerHTML);
-                      button.innerHTML = button.getAttribute("data-text-swap");
-                    }
-                  }, false);
+              button.setAttribute("data-text-swap", "Not Read");
+              button.setAttribute("data-text-original", "Read");
+                //function that changes the books read/Notread status on click
+                button.addEventListener('click', function() {
+                  if (button.getAttribute("data-text-swap") == button.innerHTML) {
+                    button.innerHTML = button.getAttribute("data-text-original");
+                  } else {
+                    button.setAttribute("data-text-original", button.innerHTML);
+                    button.innerHTML = button.getAttribute("data-text-swap");
+                  }
+                }, false);
 
 function deleteButton () {
         //create remove button

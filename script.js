@@ -45,12 +45,10 @@ let myLibrary= [{bookName:"Der steppenwolf", author: "Hermann Hesse"}, {bookName
 
 
                 
-                // creating button element  for the read/NotRead status
-              let button = document.createElement('BUTTON');     
-              //create a class for these buttons
-              button.className="statusButton";     
-                    
-              table.appendChild(button); 
+              // get the button element  for the read/NotRead status
+              let button = document.querySelector(".status-button");
+            
+         
                 //take the read/NotRead status and write it
                 var e = document.getElementById("BookStatus");
                 //the value and text examples are in the code below, let's keep it for possible further reference

@@ -112,15 +112,22 @@ deleteButton();
             var row = table.insertRow(0);
             var cell1 = row.insertCell(0);
             var cell2 = row.insertCell(1);
+          
+            
             cell1.textContent = element.bookName;
             cell2.innerHTML = element.author;
+           
+
+            
                 // creating button element  for the read/NotRead status
                 let button = document.createElement('BUTTON');     
                 //create a class for these buttons
                 button.className="statusButton";   
                 button.textContent= "Read";  
-                cell2.appendChild(button); 
-
+                table.appendChild(button); 
+                let cell3=row.insertCell(2);
+            cell3.innerHTML="<button>Read</button>";
+             
                   //set attribute for swapping texts on click
               button.setAttribute("data-text-swap", "Not Read");
               button.setAttribute("data-text-original", "Read");

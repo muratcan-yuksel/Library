@@ -98,7 +98,7 @@ deleteButton();
       document.getElementById("author").value=" ";
   }
 
-  //let statusBook= e.options[e.selectedIndex].text;
+ 
   const addTable = document.querySelector("#tableBody");
 //loop through the array and display the books as table
   function loopArr(){
@@ -115,7 +115,56 @@ deleteButton();
 tableBody.insertAdjacentHTML("afterbegin", htmlTable);
 
 
-           /* //create table
+        
+          
+                // creating button element  for the read/NotRead status
+                let button = document.querySelector(".status-button");
+              
+                  //set attribute for swapping texts on click
+              button.setAttribute("data-text-swap", "Not Read");
+              button.setAttribute("data-text-original", "Read");
+                //function that changes the books read/Notread status on click
+                button.addEventListener('click', function() {
+                  if (button.getAttribute("data-text-swap") == button.innerHTML) {
+                    button.innerHTML = button.getAttribute("data-text-original");
+                  } else {
+                    button.setAttribute("data-text-original", button.innerHTML);
+                    button.innerHTML = button.getAttribute("data-text-swap");
+                  }
+                }, false);
+/*
+                function deleteButton () {
+                  //create remove button
+                        var removeButton = document.createElement('BUTTON');   
+                  // creating text to be displayed on button 
+                        var removeButtonText = document.createTextNode("Delete"); 
+                        //append the text to the button
+                        removeButton.appendChild(removeButtonText);
+                        //append remove button to table
+                        table.appendChild(removeButton);
+                          //add an event listener to the delete button
+                        removeButton.addEventListener("click", initRemoveButton, false);
+                        //delete its parent element 
+                        function initRemoveButton(){
+                          this.parentNode.parentNode.removeChild(this.parentNode);
+                          //find the index that contains the book name and author related to the delete button
+                          //the difference here from the above function is elemen.bookName or author
+                        index= myLibrary.findIndex(obj=> obj.bookName === element.bookName && obj.author === element.author);
+                          //remove that index
+                        myLibrary.splice(index,1);
+
+                        }
+          
+             };
+          //call delete button function
+          deleteButton();
+       */     
+          
+  });
+  }
+
+
+ /* //create table
             var table = document.createElement("table");
             DOMtables.appendChild(table);
             table.classList.add("u-full-width")
@@ -175,9 +224,3 @@ tableBody.insertAdjacentHTML("afterbegin", htmlTable);
           //call delete button function
           deleteButton();
             */
-          
-  });
-  }
-
-
-

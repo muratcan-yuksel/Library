@@ -98,7 +98,8 @@ deleteButton();
       document.getElementById("author").value=" ";
   }
 
-  let statusBook= e.options[e.selectedIndex].text;
+  //let statusBook= e.options[e.selectedIndex].text;
+  const addTable = document.querySelector("#tableBody");
 //loop through the array and display the books as table
   function loopArr(){
           myLibrary.forEach((element,index)=>{
@@ -106,14 +107,12 @@ deleteButton();
             <tr>
             <td>${element.bookName}</td>
         <td>${element.author}</td>
-        <td><button class="status-button">${book.status}</button></td>
+        <td><button class="status-button">${"Read"}</button></td>
         <td><button class="delete">delete</button></td>
-
-
             </tr>
-            
-            
-            `
+                       
+            `;
+tableBody.insertAdjacentHTML("afterbegin", htmlTable);
 
 
            /* //create table
@@ -129,7 +128,7 @@ deleteButton();
             var cell2 = row.insertCell(1);
             cell1.textContent = element.bookName;
             cell2.innerHTML = element.author;
-            */
+          
                 // creating button element  for the read/NotRead status
                 let button = document.createElement('BUTTON');     
                 //create a class for these buttons
@@ -175,6 +174,7 @@ deleteButton();
              };
           //call delete button function
           deleteButton();
+            */
           
   });
   }

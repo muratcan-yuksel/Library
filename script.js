@@ -142,18 +142,21 @@ tableBody.insertAdjacentHTML("afterbegin", htmlTable);
                         var removeButton = document.querySelector(".delete"); 
                  
                           //add an event listener to the delete button
-                        removeButton.addEventListener("click", initRemoveButton, false);
-                        //delete its parent element 
-                        function initRemoveButton(){
-                          this.parentNode.parentNode.removeChild(this.parentNode);
+                        removeButton.addEventListener("click", function(e){
+                             //delete its parent element 
+                
+                         e.target.parentNode.parentNode.removeChild(e.target.parentNode);
                           
-                          //find the index that contains the book name and author related to the delete button
-                          //the difference here from the above function is elemen.bookName or author
-                        index= myLibrary.findIndex(obj=> obj.bookName === element.bookName && obj.author === element.author);
-                          //remove that index
-                        myLibrary.splice(index,1);
+                         //find the index that contains the book name and author related to the delete button
+                         //the difference here from the above function is elemen.bookName or author
+                       index= myLibrary.findIndex(obj=> obj.bookName === element.bookName && obj.author === element.author);
+                         //remove that index
+                       myLibrary.splice(index,1);
 
-                        }
+                        } );
+                       
+
+                        
           
              };
           //call delete button function

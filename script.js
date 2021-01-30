@@ -1,5 +1,5 @@
 //Array that scores all the books
-let myLibrary= [{bookName:"Der steppenwolf", author: "Hermann Hesse"}, {bookName: "Notes from the Underground", author:"Fyodor Mikhailovich Dostoevsky"}];
+let myLibrary= [{bookName:"Der steppenwolf", author: "Hermann Hesse", status: "Read"}, {bookName: "Notes from the Underground", author:"Fyodor Mikhailovich Dostoevsky", status: "Not Read"}];
 //use local storage to display stored data
 document.addEventListener("DOMContentLoaded", function() {
   console.log(localStorage.getItem("booksData"));
@@ -8,9 +8,10 @@ document.addEventListener("DOMContentLoaded", function() {
   myLibrary=localData;
 });
 //The object constructor
-function Book(bookName, author) {
+function Book(bookName, author, status) {
     this.bookName= bookName,
-    this.author= author
+    this.author= author,
+    this.status= status
   }
 //get the table adding element
 const addTable = document.querySelector("#DOMtableDiv");

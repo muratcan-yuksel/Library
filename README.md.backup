@@ -8,6 +8,6 @@ The sleek layout is done using Skeleton.css
   <li>Mark them as read/not read</li>
   <li>delete books</li>
   </ul>  
-  The data is saved via local storage
+  The data is saved via Firebase
   
 </p>

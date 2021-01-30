@@ -139,6 +139,11 @@ tableBody.insertAdjacentHTML("afterbegin", htmlTable);
           button.setAttribute("data-text-original", button.innerHTML);
           button.innerHTML = button.getAttribute("data-text-swap");
             }
+               index= myLibrary.findIndex(obj=> obj.bookName === element.bookName&& obj.author === element.author);
+               console.log(index);
+               myLibrary[index].status=button.innerHTML; 
+              //update the local storage 
+               localStorage.setItem("booksData", JSON.stringify(myLibrary));
     }, false);
     function deleteButton () {
       //create remove button

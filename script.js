@@ -40,7 +40,7 @@ const htmlTable = `
       <tr>
         <td>${getBooks}</td>
         <td>${getAuthor}</td>
-        <td><button class="status-button">${element.status}</button></td>
+        <td><button class="status-button">${getStatus}</button></td>
         <td><button class="delete">delete</button></td>
       </tr>
      </thead>

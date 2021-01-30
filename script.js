@@ -1,5 +1,10 @@
 //Array that scores all the books
 let myLibrary= [{bookName:"Der steppenwolf", author: "Hermann Hesse"}, {bookName: "Notes from the Underground", author:"Fyodor Mikhailovich Dostoevsky"}];
+window.onload = function () {
+  let booksData = localStorage.getItem("JSON.parse(booksData)");
+  myLibrary = booksData;
+  
+}
 //The object constructor
 function Book(bookName, author) {
     this.bookName= bookName,

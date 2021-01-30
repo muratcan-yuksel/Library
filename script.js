@@ -3,15 +3,13 @@ let myLibrary= [{bookName:"Der steppenwolf", author: "Hermann Hesse", status: "R
 //use local storage to display stored data
 document.addEventListener("DOMContentLoaded", function() {
   console.log(localStorage.getItem("booksData"));
+  //if absent=> the code will crash on the event of having a null local storage
   if ((localStorage.getItem("booksData")) !== null){
     let localData = localStorage.getItem("booksData");
     localData= JSON.parse(localData);
-    myLibrary=localData;
-  
+    myLibrary=localData; 
   }
- 
-
-});
+ });
 //The object constructor
 function Book(bookName, author, status) {
     this.bookName= bookName,
@@ -34,7 +32,8 @@ function addBookToLibrary() {
     bookInput.author= getAuthor;
     bookInput.status= getStatus;
       //push the objects into the array
-      myLibrary.push(bookInput);      
+      myLibrary.push(bookInput);    
+      console.log(bookInput)  
        //a function that takes the user input and turns it into a table
        //set local storage
        localStorage.setItem("booksData", JSON.stringify(myLibrary));
@@ -76,6 +75,9 @@ button.addEventListener('click', function() {
     button.setAttribute("data-text-original", button.innerHTML);
     button.innerHTML = button.getAttribute("data-text-swap");
       }
+      index= myLibrary.findIndex(obj=> obj.bookName === getBooks&& obj.author === getAuthor && obj.status === getStatus);
+      console.log(index);
+      myLibrary[index].status=button.innerHTML;
   }, false);
 
 function deleteButton () {

@@ -77,7 +77,7 @@ button.addEventListener('click', function() {
       }
       index= myLibrary.findIndex(obj=> obj.bookName === getBooks&& obj.author === getAuthor && obj.status === getStatus);
       console.log(index);
-      myLibrary[index].status=button.innerHTML;
+      myLibrary[index].status=button.innerHTML; 
   }, false);
 
 function deleteButton () {

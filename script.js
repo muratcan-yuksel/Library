@@ -3,9 +3,14 @@ let myLibrary= [{bookName:"Der steppenwolf", author: "Hermann Hesse", status: "R
 //use local storage to display stored data
 document.addEventListener("DOMContentLoaded", function() {
   console.log(localStorage.getItem("booksData"));
-  let localData = localStorage.getItem("booksData");
-  localData= JSON.parse(localData);
-  myLibrary=localData;
+  if ((localStorage.getItem("booksData")) !== null){
+    let localData = localStorage.getItem("booksData");
+    localData= JSON.parse(localData);
+    myLibrary=localData;
+  
+  }
+ 
+
 });
 //The object constructor
 function Book(bookName, author, status) {
@@ -83,8 +88,8 @@ function deleteButton () {
           function initRemoveButton(){
             this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode);
               //find the index that contains the book name and author related to the delete button
-              //the difference here from the above function is element.bookName or author
-                index= myLibrary.findIndex(obj=> obj.bookName === element.bookName && obj.author === element.author);
+              //the difference here from the below function is element.bookName or author
+                index= myLibrary.findIndex(obj=> obj.bookName === getBooks&& obj.author === getAuthor && obj.status === getStatus);
                   //remove that index
                     myLibrary.splice(index,1);
                        //update the local storage 

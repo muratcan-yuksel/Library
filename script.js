@@ -1,10 +1,12 @@
 //Array that scores all the books
 let myLibrary= [{bookName:"Der steppenwolf", author: "Hermann Hesse"}, {bookName: "Notes from the Underground", author:"Fyodor Mikhailovich Dostoevsky"}];
-/*window.onload = function () {
-  let booksData = localStorage.getItem("JSON.parse(booksData)");
-  myLibrary = booksData;
-  
-}*/
+//use local storage to display stored data
+document.addEventListener("DOMContentLoaded", function() {
+  console.log(localStorage.getItem("booksData"));
+  let localData = localStorage.getItem("booksData");
+  localData= JSON.parse(localData);
+  myLibrary=localData;
+});
 //The object constructor
 function Book(bookName, author) {
     this.bookName= bookName,
@@ -26,7 +28,7 @@ function addBookToLibrary() {
       //push the objects into the array
       myLibrary.push(bookInput);      
        //a function that takes the user input and turns it into a table
-       //set storage
+       //set local storage
        localStorage.setItem("booksData", JSON.stringify(myLibrary));
 function displayBook(){                
 const htmlTable = `

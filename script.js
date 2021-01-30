@@ -75,9 +75,10 @@ button.addEventListener('click', function() {
     button.setAttribute("data-text-original", button.innerHTML);
     button.innerHTML = button.getAttribute("data-text-swap");
       }
-      index= myLibrary.findIndex(obj=> obj.bookName === getBooks&& obj.author === getAuthor && obj.status === getStatus);
+      index= myLibrary.findIndex(obj=> obj.bookName === getBooks&& obj.author === getAuthor);
       console.log(index);
       myLibrary[index].status=button.innerHTML; 
+      
   }, false);
 
 function deleteButton () {

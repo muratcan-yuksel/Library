@@ -21,11 +21,13 @@ function addBookToLibrary() {
   // get the user input 
   let getBooks= document.getElementById("bookName").value;
   let getAuthor= document.getElementById("author").value;
+  let getStatus= document.getElementById("BookStatus").options[document.getElementById("BookStatus").selectedIndex].text;
   //create object(s) from Book prototype
   let bookInput= Object.create(Book);
   //the user input will be object's values
     bookInput.bookName= getBooks;
     bookInput.author= getAuthor;
+    bookInput.status= getStatus;
       //push the objects into the array
       myLibrary.push(bookInput);      
        //a function that takes the user input and turns it into a table

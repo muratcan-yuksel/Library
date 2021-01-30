@@ -21,6 +21,8 @@ function addBookToLibrary() {
       //push the objects into the array
       myLibrary.push(bookInput);      
        //a function that takes the user input and turns it into a table
+       //set storage
+       localStorage.setItem("booksData", JSON.stringify(myLibrary));
 function displayBook(){                
 const htmlTable = `
   <table class="u-full-width">

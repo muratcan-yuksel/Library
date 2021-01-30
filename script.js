@@ -40,7 +40,7 @@ const htmlTable = `
       <tr>
         <td>${getBooks}</td>
         <td>${getAuthor}</td>
-        <td><button class="status-button">${"Read"}</button></td>
+        <td><button class="status-button">${element.status}</button></td>
         <td><button class="delete">delete</button></td>
       </tr>
      </thead>
@@ -109,7 +109,7 @@ function loopArr(){
           <tr>
             <td>${element.bookName}</td>
             <td>${element.author}</td>
-            <td><button class="status-button">${"Read"}</button></td>
+            <td><button class="status-button">${element.status}</button></td>
             <td><button class="delete">delete</button></td>
           </tr>
         </thead>

@@ -78,6 +78,8 @@ button.addEventListener('click', function() {
       index= myLibrary.findIndex(obj=> obj.bookName === getBooks&& obj.author === getAuthor);
       console.log(index);
       myLibrary[index].status=button.innerHTML; 
+       //update the local storage 
+       localStorage.setItem("booksData", JSON.stringify(myLibrary));
       
   }, false);
 

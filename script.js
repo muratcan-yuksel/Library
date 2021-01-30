@@ -152,4 +152,3 @@ tableBody.insertAdjacentHTML("afterbegin", htmlTable);
   });
   }
 
-

@@ -84,6 +84,8 @@ function deleteButton () {
                 index= myLibrary.findIndex(obj=> obj.bookName === element.bookName && obj.author === element.author);
                   //remove that index
                     myLibrary.splice(index,1);
+                       //update the local storage 
+                        localStorage.setItem("booksData", JSON.stringify(myLibrary));
       }
    };
 //call delete button function
@@ -139,6 +141,8 @@ tableBody.insertAdjacentHTML("afterbegin", htmlTable);
                           index= myLibrary.findIndex(obj=> obj.bookName === element.bookName && obj.author === element.author);
                             //remove that index
                             myLibrary.splice(index,1);
+                               //update the local storage 
+                                  localStorage.setItem("booksData", JSON.stringify(myLibrary));
                     }
              };
 //call delete button function

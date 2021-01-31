@@ -37,20 +37,25 @@ function addBookToLibrary() {
        //a function that takes the user input and turns it into a table
        //set local storage
        localStorage.setItem("booksData", JSON.stringify(myLibrary));
-function displayBook(){                
-const htmlTable = `
-  <table class="u-full-width">
-    <thead>
-      <tr>
-        <td>${getBooks}</td>
-        <td>${getAuthor}</td>
-        <td><button class="status-button">${getStatus}</button></td>
-        <td><button class="delete">delete</button></td>
-      </tr>
-     </thead>
-  </table>                               
-              `;
-tableBody.insertAdjacentHTML("afterbegin", htmlTable);
+       //display the the table
+       function display(){
+        const htmlTable = `
+      <table class="u-full-width">
+        <thead>
+          <tr>
+            <td>${getBooks}</td>
+            <td>${getAuthor}</td>
+            <td><button class="status-button">${getStatus}</button></td>
+            <td><button class="delete">delete</button></td>
+          </tr>
+         </thead>
+      </table>                               
+                  `;
+    tableBody.insertAdjacentHTML("afterbegin", htmlTable);
+    }
+
+       function displayBook(){                
+display();
  // get the button element  for the read/NotRead status
 let button = document.querySelector(".status-button");
  //take the read/NotRead status and write it

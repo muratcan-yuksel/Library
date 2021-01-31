@@ -68,30 +68,35 @@ function getBookStatus(){
      }else if (statusBook=="Not Read"){
         button.innerHTML= "Not Read";
      }
+     return button;
     }
+    function swapStatus(){
+        getBookStatus();
+        //set attribute for swapping texts on click
+   button.setAttribute("data-text-swap", "Not Read");
+   button.setAttribute("data-text-original", "Read");
+   //function that changes the books read/Notread status on click
+   button.addEventListener('click', function() {
+     if (button.getAttribute("data-text-swap") == button.innerHTML) {
+       button.innerHTML = button.getAttribute("data-text-original");
+     } else {
+       button.setAttribute("data-text-original", button.innerHTML);
+       button.innerHTML = button.getAttribute("data-text-swap");
+         }
+         index= myLibrary.findIndex(obj=> obj.bookName === getBooks&& obj.author === getAuthor);
+         console.log(index);
+         myLibrary[index].status=button.innerHTML; 
+          //update the local storage 
+          localStorage.setItem("booksData", JSON.stringify(myLibrary));
+         
+     }, false);
+   }
 
        function displayBook(){                
 display();
 getBookStatus();
+swapStatus();
 
- //set attribute for swapping texts on click
-button.setAttribute("data-text-swap", "Not Read");
-button.setAttribute("data-text-original", "Read");
-//function that changes the books read/Notread status on click
-button.addEventListener('click', function() {
-  if (button.getAttribute("data-text-swap") == button.innerHTML) {
-    button.innerHTML = button.getAttribute("data-text-original");
-  } else {
-    button.setAttribute("data-text-original", button.innerHTML);
-    button.innerHTML = button.getAttribute("data-text-swap");
-      }
-      index= myLibrary.findIndex(obj=> obj.bookName === getBooks&& obj.author === getAuthor);
-      console.log(index);
-      myLibrary[index].status=button.innerHTML; 
-       //update the local storage 
-       localStorage.setItem("booksData", JSON.stringify(myLibrary));
-      
-  }, false);
 
 function deleteButton () {
 //create remove button

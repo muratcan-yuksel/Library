@@ -54,21 +54,26 @@ function addBookToLibrary() {
     tableBody.insertAdjacentHTML("afterbegin", htmlTable);
     }
 
+function getBookStatus(){
+    // get the button element  for the read/NotRead status
+    let button = document.querySelector(".status-button");
+    //take the read/NotRead status and write it
+   var e = document.getElementById("BookStatus");
+    //the value and text examples are in the code below, let's keep it for possible further reference
+   //var strSel = "The Value is: " + e.options[e.selectedIndex].value + " and text is: " + e.options[e.selectedIndex].text;
+   //this is the dropdown value, chosen
+   let statusBook= e.options[e.selectedIndex].text;
+     if (statusBook == "Read"){
+        button.innerHTML= "Read";
+     }else if (statusBook=="Not Read"){
+        button.innerHTML= "Not Read";
+     }
+    }
+
        function displayBook(){                
 display();
- // get the button element  for the read/NotRead status
-let button = document.querySelector(".status-button");
- //take the read/NotRead status and write it
-var e = document.getElementById("BookStatus");
- //the value and text examples are in the code below, let's keep it for possible further reference
-//var strSel = "The Value is: " + e.options[e.selectedIndex].value + " and text is: " + e.options[e.selectedIndex].text;
-//this is the dropdown value, chosen
-let statusBook= e.options[e.selectedIndex].text;
-  if (statusBook == "Read"){
-     button.innerHTML= "Read";
-  }else if (statusBook=="Not Read"){
-     button.innerHTML= "Not Read";
-  }
+getBookStatus();
+
  //set attribute for swapping texts on click
 button.setAttribute("data-text-swap", "Not Read");
 button.setAttribute("data-text-original", "Read");

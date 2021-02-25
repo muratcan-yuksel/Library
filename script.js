@@ -11,10 +11,13 @@ document.addEventListener("DOMContentLoaded", function() {
   }
  });
 //The object constructor
-function Book(bookName, author, status) {
+class Book {
+  constructor (bookName, author, status){
     this.bookName= bookName,
     this.author= author,
     this.status= status
+  }
+    
   }
 //get the table adding element
 const addTable = document.querySelector("#DOMtableDiv");
